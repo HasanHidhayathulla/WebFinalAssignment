@@ -32,3 +32,106 @@ $conflicts
 $messages
 $conflict
 $hashedPassword
+
+## Variable descriptions
+
+- `$_SESSION`
+  - stores logged-in user data across pages, like `user_id`, `username`, and `first_name`
+
+- `$_GET`
+  - reads query string values passed in URL, such as `message` and `user_id`
+
+- `$_POST`
+  - reads form submission values like login, registration, and update fields
+
+- `$_SERVER`
+  - used to check request method with `$_SERVER['REQUEST_METHOD']`
+
+- `$message`
+  - holds a status message passed from another page to show success feedback
+
+- `$stmt`
+  - PDO statement object used for preparing and executing database queries
+
+- `$pdo`
+  - PDO database connection object created in db.php
+
+- `$staff`
+  - array of user rows fetched from the `user` table for the admin listing
+
+- `$row`
+  - single user row inside the admin table loop
+
+- `$host`
+  - database server hostname in db.php
+
+- `$db`
+  - database name used by PDO in db.php
+
+- `$user`
+  - in db.php: database username
+  - in login.php and update_staff.php: current user record fetched from database
+
+- `$pass`
+  - database password in db.php
+
+- `$charset`
+  - database character set configuration in db.php
+
+- `$dsn`
+  - PDO data source name string built from host, db, and charset
+
+- `$options`
+  - PDO connection options array for error mode and fetch settings
+
+- `$e`
+  - caught `PDOException` object when database connection fails
+
+- `$user_id`
+  - user identifier passed through URL or forms, used for delete/update operations
+
+- `$error`
+  - error message text shown to the user when validation or login fails
+
+- `$username`
+  - username entered on login, register, or update forms
+
+- `$password`
+  - password entered on login, register, or update forms
+
+- `$sql`
+  - SQL query string used for preparing database statements
+
+- `$passwordVerified`
+  - boolean flag in login.php that tracks whether a submitted password is valid
+
+- `$params`
+  - associative array of bound parameters for update queries in update_staff.php
+
+- `$success`
+  - success message text shown after registration or update completes
+
+- `$first_name`
+  - first-name field entered or stored for user creation/update
+
+- `$last_name`
+  - last-name field entered or stored for user creation/update
+
+- `$email`
+  - email field entered or stored for user creation/update
+
+- `$count`
+  - number of existing matching records found during registration duplicate check
+
+- `$conflicts`
+  - array of database rows that conflict with a requested username/email/user_id
+
+- `$messages`
+  - list of duplicate validation messages assembled during registration/update
+
+- `$conflict`
+  - single record from the conflict result set used to compare duplicates
+
+- `$hashedPassword`
+  - hashed password value created before inserting a new user record
+
