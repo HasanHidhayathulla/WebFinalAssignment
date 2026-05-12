@@ -27,11 +27,11 @@ try {
     
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
-    $staff = $stmt->fetchAll();
+    $transactions = $stmt->fetchAll();
     
 } catch (PDOException $e) {
     $error = 'Database error: ' . $e->getMessage();
-    $staff = [];
+    $transactions = [];
 }
 ?>
 <!DOCTYPE html>
@@ -187,7 +187,7 @@ try {
             <div class="message error"><?php echo $error; ?></div>
         <?php endif; ?>
 
-        <?php if (empty($staff)): ?>
+        <?php if (empty($transactions)): ?>
             <div class="no-data">
                 <p>No borrow transactions found. <a href="borrow_form.php">Create one now</a></p>
             </div>
@@ -206,23 +206,23 @@ try {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($staff as $row): ?>
+                    <?php foreach ($transactions as $transaction): ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($row['borrow_id']); ?></td>
-                            <td><?php echo htmlspecialchars($row['book_id']); ?></td>
-                            <td><?php echo htmlspecialchars($row['book_name']); ?></td>
-                            <td><?php echo htmlspecialchars($row['member_id']); ?></td>
-                            <td><?php echo htmlspecialchars($row['member_name']); ?></td>
+                            <td><?php echo htmlspecialchars($transaction['borrow_id']); ?></td>
+                            <td><?php echo htmlspecialchars($transaction['book_id']); ?></td>
+                            <td><?php echo htmlspecialchars($transaction['book_name']); ?></td>
+                            <td><?php echo htmlspecialchars($transaction['member_id']); ?></td>
+                            <td><?php echo htmlspecialchars($transaction['member_name']); ?></td>
                             <td>
-                                <span class="status-badge status-<?php echo strtolower($row['borrow_status']); ?>">
-                                    <?php echo ucfirst($row['borrow_status']); ?>
+                                <span class="status-badge status-<?php echo strtolower($transaction['borrow_status']); ?>">
+                                    <?php echo ucfirst($transaction['borrow_status']); ?>
                                 </span>
                             </td>
-                            <td><?php echo htmlspecialchars($row['borrower_date_modified']); ?></td>
+                            <td><?php echo htmlspecialchars($transaction['borrower_date_modified']); ?></td>
                             <td>
                                 <div class="actions">
-                                    <a href="update_borrow.php?borrow_id=<?php echo urlencode($row['borrow_id']); ?>" class="btn btn-warning">Edit</a>
-                                    <a href="delete_borrow.php?borrow_id=<?php echo urlencode($row['borrow_id']); ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this transaction?');">Delete</a>
+                                    <a href="update_borrow.php?borrow_id=<?php echo urlencode($transaction['borrow_id']); ?>" class="btn btn-warning">Edit</a>
+                                    <a href="delete_borrow.php?borrow_id=<?php echo urlencode($transaction['borrow_id']); ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this transaction?');">Delete</a>
                                 </div>
                             </td>
                         </tr>

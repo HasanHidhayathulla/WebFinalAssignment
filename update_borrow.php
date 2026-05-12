@@ -5,7 +5,7 @@ require_once "functions.php";
 
 
 $borrow_id = isset($_GET['borrow_id']) ? trim($_GET['borrow_id']) : '';
-$row = null;
+$borrow_transaction = null;
 $error = '';
 
 if (empty($borrow_id)) {
@@ -18,9 +18,9 @@ try {
     $sql = "SELECT * FROM bookborrower WHERE borrow_id = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$borrow_id]);
-    $row = $stmt->fetch();
+    $borrow_transaction = $stmt->fetch();
     
-    if (!$row) {
+    if (!$borrow_transaction) {
         $_SESSION['error'] = 'Transaction not found!';
         header('Location: borrowlist.php');
         exit;
@@ -73,10 +73,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
     
-    // Update the row for display if there was an error
-    $row['book_id'] = $new_book_id;
-    $row['member_id'] = $new_member_id;
-    $row['borrow_status'] = $new_status;
+    // Update the borrow transaction for display if there was an error
+    $borrow_transaction['book_id'] = $new_book_id;
+    $borrow_transaction['member_id'] = $new_member_id;
+    $borrow_transaction['borrow_status'] = $new_status;
 }
 ?>
 <!DOCTYPE html>
@@ -192,7 +192,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="POST">
             <div class="form-group">
                 <label for="borrow_id">Borrow ID (Read-only):</label>
-                <input type="text" id="borrow_id" name="borrow_id" value="<?php echo htmlspecialchars($row['borrow_id']); ?>" readonly class="borrow-id">
+                <input type="text" id="borrow_id" name="borrow_id" value="<?php echo htmlspecialchars($borrow_transaction['borrow_id']); ?>" readonly class="borrow-id">
             </div>
 
             <div class="form-group">
@@ -201,12 +201,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <option value="">-- Select a Book --</option>
                     <?php foreach ($books as $book): ?>
                         <option value="<?php echo $book['book_id']; ?>" 
-                                <?php echo ($book['book_id'] === $row['book_id']) ? 'selected' : ''; ?>>
+                                <?php echo ($book['book_id'] === $borrow_transaction['book_id']) ? 'selected' : ''; ?>>
                             <?php echo $book['book_id'] . ' - ' . $book['book_name']; ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <div class="info">Current: <?php echo htmlspecialchars($row['book_id']); ?></div>
+                <div class="info">Current: <?php echo htmlspecialchars($borrow_transaction['book_id']); ?></div>
             </div>
 
             <div class="form-group">
@@ -215,22 +215,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <option value="">-- Select a Member --</option>
                     <?php foreach ($members as $member): ?>
                         <option value="<?php echo $member['member_id']; ?>" 
-                                <?php echo ($member['member_id'] === $row['member_id']) ? 'selected' : ''; ?>>
+                                <?php echo ($member['member_id'] === $borrow_transaction['member_id']) ? 'selected' : ''; ?>>
                             <?php echo $member['member_id'] . ' - ' . $member['member_name']; ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
-                <div class="info">Current: <?php echo htmlspecialchars($row['member_id']); ?></div>
+                <div class="info">Current: <?php echo htmlspecialchars($borrow_transaction['member_id']); ?></div>
             </div>
 
             <div class="form-group">
                 <label for="status">Status:</label>
                 <select id="status" name="status" required>
                     <option value="">-- Select Status --</option>
-                    <option value="borrowed" <?php echo ($row['borrow_status'] === 'borrowed') ? 'selected' : ''; ?>>Borrowed</option>
-                    <option value="available" <?php echo ($row['borrow_status'] === 'available') ? 'selected' : ''; ?>>Available</option>
+                    <option value="borrowed" <?php echo ($borrow_transaction['borrow_status'] === 'borrowed') ? 'selected' : ''; ?>>Borrowed</option>
+                    <option value="available" <?php echo ($borrow_transaction['borrow_status'] === 'available') ? 'selected' : ''; ?>>Available</option>
                 </select>
-                <div class="info">Current: <?php echo ucfirst($row['borrow_status']); ?></div>
+                <div class="info">Current: <?php echo ucfirst($borrow_transaction['borrow_status']); ?></div>
             </div>
 
             <div class="button-group">
