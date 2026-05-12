@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once 'config.php';
+require_once 'db.php';
+require_once 'functions.php';
 
 $message = '';
 $error = '';
@@ -132,7 +133,7 @@ $members = getMembers($pdo);
             <div class="message error"><?php echo $error; ?></div>
         <?php endif; ?>
 
-        <form method="POST" action="create.php">
+        <form method="POST" action="create_borrow.php">
             <div class="form-group">
                 <label for="borrow_id">Borrow ID:</label>
                 <input type="text" id="borrow_id" name="borrow_id" placeholder="e.g., BR001" required>
@@ -177,7 +178,7 @@ $members = getMembers($pdo);
             <button type="submit">Create Transaction</button>
         </form>
 
-        <a href="list.php" class="nav-link">View All Transactions</a>
+        <a href="borrowlist.php" class="nav-link">View All Transactions</a>
     </div>
 </body>
 </html>

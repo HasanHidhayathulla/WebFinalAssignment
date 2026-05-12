@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'config.php';
+require_once 'db.php';
 
 $error = '';
 $success = '';
@@ -175,7 +175,7 @@ try {
         <h1>Book Borrow Transactions</h1>
 
         <div class="header-actions">
-            <a href="form.php" class="btn btn-primary">+ Create New Transaction</a>
+            <a href="borrow_form.php" class="btn btn-primary">+ Create New Transaction</a>
             <a href="../index.php" class="btn btn-secondary">Back to Home</a>
         </div>
 
@@ -189,7 +189,7 @@ try {
 
         <?php if (empty($staff)): ?>
             <div class="no-data">
-                <p>No borrow transactions found. <a href="form.php">Create one now</a></p>
+                <p>No borrow transactions found. <a href="borrow_form.php">Create one now</a></p>
             </div>
         <?php else: ?>
             <table>
@@ -221,8 +221,8 @@ try {
                             <td><?php echo htmlspecialchars($row['borrower_date_modified']); ?></td>
                             <td>
                                 <div class="actions">
-                                    <a href="update.php?borrow_id=<?php echo urlencode($row['borrow_id']); ?>" class="btn btn-warning">Edit</a>
-                                    <a href="delete.php?borrow_id=<?php echo urlencode($row['borrow_id']); ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this transaction?');">Delete</a>
+                                    <a href="update_borrow.php?borrow_id=<?php echo urlencode($row['borrow_id']); ?>" class="btn btn-warning">Edit</a>
+                                    <a href="delete_borrow.php?borrow_id=<?php echo urlencode($row['borrow_id']); ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this transaction?');">Delete</a>
                                 </div>
                             </td>
                         </tr>

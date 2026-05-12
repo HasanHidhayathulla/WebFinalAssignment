@@ -1,13 +1,15 @@
 <?php
 session_start();
-require_once 'config.php';
+require_once 'db.php';
+require_once "functions.php";
+
 
 $borrow_id = isset($_GET['borrow_id']) ? trim($_GET['borrow_id']) : '';
 $row = null;
 $error = '';
 
 if (empty($borrow_id)) {
-    header('Location: list.php');
+    header('Location: borrowlist.php');
     exit;
 }
 
@@ -20,12 +22,12 @@ try {
     
     if (!$row) {
         $_SESSION['error'] = 'Transaction not found!';
-        header('Location: list.php');
+        header('Location: borrowlist.php');
         exit;
     }
 } catch (PDOException $e) {
     $_SESSION['error'] = 'Database error: ' . $e->getMessage();
-    header('Location: list.php');
+    header('Location: borrowlist.php');
     exit;
 }
 
@@ -64,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute($params);
             
             $_SESSION['success'] = 'Transaction updated successfully!';
-            header('Location: list.php');
+            header('Location: borrowlist.php');
             exit;
         } catch (PDOException $e) {
             $error = 'Database error: ' . $e->getMessage();
@@ -233,7 +235,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="button-group">
                 <button type="submit">Update Transaction</button>
-                <a href="list.php" class="cancel-btn">Cancel</a>
+                <a href="borrowlist.php" class="cancel-btn">Cancel</a>
             </div>
         </form>
     </div>

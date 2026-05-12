@@ -122,23 +122,11 @@ session_start();
 <body>
     <div class="container">
         <h1>📚 Book Borrow Management</h1>
-        <p class="subtitle">Feature 5: Manage Book Borrowing Transactions</p>
-
-        <div class="features">
-            <h3>Available Features:</h3>
-            <ul>
-                <li>Create new book borrow transactions</li>
-                <li>View all borrow records with details</li>
-                <li>Edit existing transactions</li>
-                <li>Delete borrow records</li>
-                <li>Track borrowed/available status</li>
-                <li>Triple format validation (BR001, B001, M001)</li>
-            </ul>
-        </div>
+      
 
         <div class="actions">
-            <a href="form.php" class="btn btn-primary">+ Create Transaction</a>
-            <a href="list.php" class="btn btn-secondary">View Transactions</a>
+            <a href="create_borrow.php" class="btn btn-primary">+ Create Transaction</a>
+            <a href="borrowlist.php" class="btn btn-secondary">View Transactions</a>
         </div>
 
         <div class="info-box">

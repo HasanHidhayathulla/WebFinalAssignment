@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once 'config.php';
+require_once 'db.php';
+require_once 'functions.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get form data
@@ -24,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if ($error) {
         $_SESSION['error'] = $error;
-        header('Location: form.php');
+        header('Location: borrow_form.php');
         exit;
     }
     
@@ -39,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         if ($stmt->fetch()) {
             $_SESSION['error'] = 'Borrow ID already exists. Please use a different ID.';
-            header('Location: form.php');
+            header('Location: borrow_form.php');
             exit;
         }
         
@@ -51,15 +52,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute($params);
         
         // Redirect with success message
-        header('Location: form.php?message=Transaction%20created%20successfully!');
+        header('Location: borrow_form.php?message=Transaction%20created%20successfully!');
         exit;
     } catch (PDOException $e) {
         $_SESSION['error'] = 'Database error: ' . $e->getMessage();
-        header('Location: form.php');
+        header('Location: borrow_form.php');
         exit;
     }
 } else {
-    header('Location: form.php');
+    header('Location: borrow_form.php');
     exit;
 }
 ?>
