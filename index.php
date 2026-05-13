@@ -329,6 +329,23 @@ include 'sessioncheck.php';
                     <a href="login_User_manage/admin.php">Admin panel</a>
                 </div>
             </div>
+            
+            <!-- Book Management -->
+            <div class="feature-card card-green">
+                <div class="feature-card-header">
+                    <div>
+                        <div class="emoji">📖</div>
+                        <span>Book Management</span>
+                    </div>
+                </div>
+                <div class="feature-card-body">
+                    <p>Add, view, update, and remove books from your library inventory with category assignment.</p>
+                </div>
+                <div class="feature-card-footer">
+                    <a href="book_management/Book_index.php">Manage Books</a>
+                </div>
+            </div>
+
             <!-- Book Category Management -->
             <div class="feature-card card-blue">
                 <div class="feature-card-header">
@@ -345,21 +362,6 @@ include 'sessioncheck.php';
                 </div>
             </div>
 
-            <!-- Book Management -->
-            <div class="feature-card card-green">
-                <div class="feature-card-header">
-                    <div>
-                        <div class="emoji">📖</div>
-                        <span>Book Management</span>
-                    </div>
-                </div>
-                <div class="feature-card-body">
-                    <p>Add, view, update, and remove books from your library inventory with category assignment.</p>
-                </div>
-                <div class="feature-card-footer">
-                    <a href="book_management/Book_index.php">Manage Books</a>
-                </div>
-            </div>
 
             <!-- Member Management -->
             <div class="feature-card card-teal">
