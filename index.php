@@ -314,6 +314,21 @@ include 'sessioncheck.php';
     <div class="dashboard-container">
         <!-- Features Grid -->
         <div class="feature-grid">
+            <!-- Staff Management -->
+            <div class="feature-card card-purple">
+                <div class="feature-card-header">
+                    <div>
+                        <div class="emoji">👨‍💼</div>
+                        <span>Staff Management</span>
+                    </div>
+                </div>
+                <div class="feature-card-body">
+                    <p>Manage library staff accounts, admin panel access, and user credentials (login required).</p>
+                </div>
+                <div class="feature-card-footer">
+                    <a href="login_User_manage/admin.php">Admin panel</a>
+                </div>
+            </div>
             <!-- Book Category Management -->
             <div class="feature-card card-blue">
                 <div class="feature-card-header">
@@ -394,21 +409,7 @@ include 'sessioncheck.php';
                 </div>
             </div>
 
-            <!-- Staff Management -->
-            <div class="feature-card card-purple">
-                <div class="feature-card-header">
-                    <div>
-                        <div class="emoji">👨‍💼</div>
-                        <span>Staff Management</span>
-                    </div>
-                </div>
-                <div class="feature-card-body">
-                    <p>Manage library staff accounts, admin panel access, and user credentials (login required).</p>
-                </div>
-                <div class="feature-card-footer">
-                    <a href="login_User_manage/admin.php">Admin panel</a>
-                </div>
-            </div>
+            
         </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
