@@ -14,7 +14,7 @@ $staff = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="style.css"> <!-- Updated to use the style.css inside WebFinalAssignment folder -->
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 <div class="container">
