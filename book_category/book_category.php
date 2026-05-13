@@ -1,6 +1,8 @@
 <?php
-session_start();
 require_once __DIR__ . '/../db.php';
+
+include '../sessioncheck.php';
+
 
 $message = '';
 $error = '';
@@ -102,6 +104,7 @@ $categories = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Book Category Registration</title>
+    <link rel="stylesheet" href="../style.css"> 
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
         .container { max-width: 800px; margin: 0 auto; }

@@ -5,6 +5,9 @@ session_start();
 require_once '../db.php';
 include 'validation.php';
 
+include '../sessioncheck.php';
+
+
 $message = '';
 $error = '';
 $edit_member_id = null;

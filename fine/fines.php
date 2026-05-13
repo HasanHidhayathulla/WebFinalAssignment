@@ -1,7 +1,9 @@
 <?php
 session_start();
 include_once '../db.php'; // Include database connection file
-// 1. Logic to ADD a Fine
+include '../sessioncheck.php';
+
+
 if (isset($_POST['add_fine'])) {
     $fine_id = $_POST['fine_id'];
     $member_id = $_POST['member_id'];

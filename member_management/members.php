@@ -2,6 +2,8 @@
 // Library Member Management System
 session_start();
 
+include '../sessioncheck.php';
+
 require_once '../db.php';
 include 'validation.php';
 

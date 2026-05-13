@@ -2,6 +2,8 @@
 session_start();
 require_once '../db.php';
 require_once 'functions.php';
+include '../sessioncheck.php';
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get form data

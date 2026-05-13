@@ -2,6 +2,8 @@
 session_start();
 require_once 'db.php';
 require_once "functions.php";
+include '../sessioncheck.php';
+
 
 
 $borrow_id = isset($_GET['borrow_id']) ? trim($_GET['borrow_id']) : '';

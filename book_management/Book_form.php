@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'Book_functions.php';
+include '../sessioncheck.php';
 
 require_once '../db.php';
 

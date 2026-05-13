@@ -1,7 +1,8 @@
 <?php
 session_start();
 require_once '../db.php';
-require_once '../borrow_management/functions.php'; // Include validation functions
+require_once 'Book_functions.php'; // Include validation functions
+include '../sessioncheck.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get form data
