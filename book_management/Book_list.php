@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../borrow_management/db.php';
+require_once 'db.php';
 
 $error = '';
 $success = '';

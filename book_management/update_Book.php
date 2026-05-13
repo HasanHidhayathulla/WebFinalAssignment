@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../borrow_management/db.php';
+require_once 'db.php';
 
 $book_id = isset($_POST['book_id']) ? trim($_POST['book_id']) : '';
 $book_name = isset($_POST['book_name']) ? trim($_POST['book_name']) : '';
