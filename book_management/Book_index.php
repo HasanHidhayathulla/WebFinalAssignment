@@ -111,17 +111,6 @@ require_once 'Book_functions.php';
         <h1>📚 Book Management System</h1>
         <p class="subtitle">Register, Update, and Manage Your Book Inventory</p>
         
-        <div class="features">
-            <h3>✨ Available Features:</h3>
-            <ul>
-                <li><span class="feature-icon">✓</span> Register new books with ID validation</li>
-                <li><span class="feature-icon">✓</span> Assign books to categories</li>
-                <li><span class="feature-icon">✓</span> View all registered books in a table</li>
-                <li><span class="feature-icon">✓</span> Edit book information</li>
-                <li><span class="feature-icon">✓</span> Delete books from inventory</li>
-                <li><span class="feature-icon">✓</span> Regex validation for Book ID (B001 format)</li>
-            </ul>
-        </div>
         
         <div class="button-group">
             <a href="Book_list.php" class="btn-primary">View All Books</a>
@@ -129,7 +118,7 @@ require_once 'Book_functions.php';
         </div>
         
         <div class="button-group" style="margin-top: 20px;">
-            <a href="../borrow_management/Book_index.php" class="btn-back">← Back to Main</a>
+            <a href="Book_index.php" class="btn-back">← Back to Main</a>
         </div>
     </div>
 </body>

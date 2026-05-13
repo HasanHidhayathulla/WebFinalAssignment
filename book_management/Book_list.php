@@ -214,7 +214,7 @@ try {
         <?php endif; ?>
         
         <div class="back-link">
-            <a href="../borrow_management/Book_index.php">Back to Main</a>
+            <a href="Book_index.php">Back to Main</a>
         </div>
     </div>
 </body>
