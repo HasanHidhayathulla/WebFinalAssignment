@@ -32,6 +32,17 @@ $conflicts
 $messages
 $conflict
 $hashedPassword
+$books
+$members
+$borrow_id
+$book_id
+$member_id
+$status
+$date_modified
+$check_sql
+$new_book_id
+$new_member_id
+$new_status
 
 ## Variable descriptions
 
@@ -134,4 +145,37 @@ $hashedPassword
 
 - `$hashedPassword`
   - hashed password value created before inserting a new user record
+
+- `$books`
+  - array of all available books fetched from the book table for dropdown selection
+
+- `$members`
+  - array of all available members fetched from the member table for dropdown selection
+
+- `$borrow_id`
+  - unique identifier for a book borrow transaction in BR### format (e.g., BR001)
+
+- `$book_id`
+  - identifier of the book being borrowed in B### format (e.g., B001)
+
+- `$member_id`
+  - identifier of the member borrowing the book in M### format (e.g., M001)
+
+- `$status`
+  - status of the borrow transaction (e.g., 'borrowed' or 'available')
+
+- `$date_modified`
+  - timestamp when the borrow transaction was created or last updated (Y-m-d H:i:s format)
+
+- `$check_sql`
+  - SQL query string used to check if a borrow_id already exists before insertion
+
+- `$new_book_id`
+  - updated book ID value submitted on the update borrow form
+
+- `$new_member_id`
+  - updated member ID value submitted on the update borrow form
+
+- `$new_status`
+  - updated status value submitted on the update borrow form
 
