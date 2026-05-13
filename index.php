@@ -406,7 +406,7 @@ include 'sessioncheck.php';
                     <p>Manage library staff accounts, admin panel access, and user credentials (login required).</p>
                 </div>
                 <div class="feature-card-footer">
-                    <a href="login_User_manage/login.php">Staff Login</a>
+                    <a href="login_User_manage/admin.php">Admin panel</a>
                 </div>
             </div>
         </div>
@@ -414,4 +414,3 @@ include 'sessioncheck.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-?>
