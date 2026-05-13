@@ -216,6 +216,7 @@ if (isset($_GET['edit'])) {
     </style>
 </head>
 <body>
+    <?php include_once '../navigation.php'; ?>
     <div class="container">
         <h1>📚 Library Member Registration</h1>
         
