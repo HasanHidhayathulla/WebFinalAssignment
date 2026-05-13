@@ -14,15 +14,16 @@ $staff = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="../style.css"> <!-- Updated to use the style.css inside WebFinalAssignment folder -->
 </head>
 <body>
+<?php include_once '../navigation.php'; ?>
 <div class="container">
     <header class="topbar">
         <h1>Admin Panel</h1>
         <div>
             <span>Welcome, <?php echo htmlspecialchars($_SESSION['first_name']); ?></span>
-            <a class="button" href="logout.php">Logout</a>
+            
         </div>
     </header>
 

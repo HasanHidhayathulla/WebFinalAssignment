@@ -3,8 +3,8 @@ session_start();
 require_once '../db.php';
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = trim($_POST['username'] ?? '');
-    $password = $_POST['password'] ?? '';
+    $username = trim($_POST['username']  );
+    $password = trim($_POST['password']  );
 
     if ($username === '' || $password === '') {
         $error = 'Enter both username and password.';
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $passwordVerified = true;
                 $stmt = $pdo->prepare('UPDATE `user` SET password = :password WHERE user_id = :user_id');
                 $stmt->execute([
-                    'password' => password_hash($password, PASSWORD_DEFAULT),
+                    'password' => password_hash($password,),
                     'user_id' => $user['user_id'],
                 ]);
             }
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['user_id'] = $user['user_id'];
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['first_name'] = $user['first_name'];
-                header('Location: admin.php');
+                header('Location: ../index.php');
                 exit;
             }
         }
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Staff Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <div class="container">
