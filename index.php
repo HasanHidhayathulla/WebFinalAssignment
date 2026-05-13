@@ -390,7 +390,7 @@ include 'sessioncheck.php';
                     <p>Assign fines to members for late returns, manage fine records, and track payments.</p>
                 </div>
                 <div class="feature-card-footer">
-                    <a href="fines/fines.php">Manage Fines</a>
+                    <a href="fine/fines.php">Manage Fines</a>
                 </div>
             </div>
 
