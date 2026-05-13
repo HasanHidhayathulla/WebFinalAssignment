@@ -165,6 +165,7 @@ try {
     </style>
 </head>
 <body>
+    <?php include_once '../navigation.php'; ?>
     <div class="container">
         <h1>Book Registry</h1>
         

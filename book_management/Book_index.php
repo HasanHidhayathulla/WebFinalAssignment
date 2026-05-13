@@ -1,7 +1,10 @@
 <?php
 session_start();
+require_once '../db.php';
 require_once 'Book_functions.php';
 ?>
+
+    <?php include_once '../navigation.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,10 +107,14 @@ require_once 'Book_functions.php';
             font-size: 24px;
             margin-right: 10px;
         }
+        
+        
     </style>
 </head>
 <body>
+    <?php include_once '../navigation.php'; ?>
     <div class="container">
+        
         <h1>📚 Book Management System</h1>
         <p class="subtitle">Register, Update, and Manage Your Book Inventory</p>
         
@@ -117,9 +124,7 @@ require_once 'Book_functions.php';
             <a href="Book_form.php" class="btn-secondary">+ Register New Book</a>
         </div>
         
-        <div class="button-group" style="margin-top: 20px;">
-            <a href="Book_index.php" class="btn-back">← Back to Main</a>
-        </div>
+     
     </div>
 </body>
 </html>

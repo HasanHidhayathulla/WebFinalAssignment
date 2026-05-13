@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../db.php';
+require_once 'Book_functions.php'; // Include validation functions
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get form data
