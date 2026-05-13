@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . '/db.php';
+session_start();
+require_once __DIR__ . '/../db.php';
 
 $message = '';
 $error = '';
@@ -116,6 +117,7 @@ $categories = $stmt->fetchAll();
     </style>
 </head>
 <body>
+    <?php include_once __DIR__ . '/../navigation.php'; ?>
     <div class="container">
         <h1>Book Category Registration</h1>
 
