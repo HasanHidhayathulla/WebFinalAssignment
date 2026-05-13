@@ -4,7 +4,7 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit;
 }
-require_once 'db.php';
+require_once '../db.php';
 $message = $_GET['message'] ?? '';
 $stmt = $pdo->query('SELECT user_id, first_name, last_name, username, email, password FROM `user` ORDER BY user_id');
 $staff = $stmt->fetchAll();

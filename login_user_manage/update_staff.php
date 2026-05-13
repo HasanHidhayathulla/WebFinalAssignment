@@ -4,7 +4,7 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit;
 }
-require_once 'db.php';
+require_once '../db.php';
 $error = '';
 $success = '';
 $user_id = $_GET['user_id'] ?? '';
