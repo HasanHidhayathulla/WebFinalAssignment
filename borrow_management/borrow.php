@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once '../db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -120,6 +121,7 @@ session_start();
     </style>
 </head>
 <body>
+    <?php include_once '../navigation.php'; ?>
     <div class="container">
         <h1>📚 Book Borrow Management</h1>
       
@@ -137,7 +139,7 @@ session_start();
         </div>
 
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
-            <a href="../index.php" class="btn btn-back">← Back to Home</a>
+         
         </div>
     </div>
 </body>

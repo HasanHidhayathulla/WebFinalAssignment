@@ -6,7 +6,7 @@ $borrow_id = isset($_GET['borrow_id']) ? trim($_GET['borrow_id']) : '';
 
 if (empty($borrow_id)) {
     $_SESSION['error'] = 'Invalid Borrow ID!';
-    header('Location: list.php');
+    header('Location: borrowlist.php');
     exit;
 }
 
@@ -18,7 +18,7 @@ try {
     
     if (!$stmt->fetch()) {
         $_SESSION['error'] = 'Transaction not found!';
-        header('Location: list.php');
+        header('Location: borrowlist.php');
         exit;
     }
     
@@ -28,12 +28,12 @@ try {
     $stmt->execute([$borrow_id]);
     
     $_SESSION['success'] = 'Transaction deleted successfully!';
-    header('Location: list.php');
+    header('Location: borrowlist.php');
     exit;
     
 } catch (PDOException $e) {
     $_SESSION['error'] = 'Database error: ' . $e->getMessage();
-    header('Location: list.php');
+    header('Location: borrowlist.php');
     exit;
 }
 ?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once '../db.php';
 
 $error = '';
 $success = '';
@@ -171,6 +171,7 @@ try {
     </style>
 </head>
 <body>
+    <?php include_once '../navigation.php'; ?>
     <div class="container">
         <h1>Book Borrow Transactions</h1>
 
