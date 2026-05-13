@@ -2,7 +2,7 @@
 session_start();
 require_once 'Book_functions.php';
 
-require_once 'db.php';
+require_once '../db.php';
 
 $message = '';
 $error = '';

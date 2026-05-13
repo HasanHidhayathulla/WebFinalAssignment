@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once '../db.php';
 
 $book_id = isset($_GET['book_id']) ? trim($_GET['book_id']) : '';
 
