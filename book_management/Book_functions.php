@@ -15,3 +15,6 @@ function getCategoryName($pdo, $category_id) {
     $row = $stmt->fetch();
     return $row ? $row['category_Name'] : 'Unknown';
 }
+function validateBookID($book_id) {
+    return preg_match('/^B\d{3}$/', $book_id) === 1;
+}
