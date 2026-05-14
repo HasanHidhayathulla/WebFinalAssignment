@@ -55,7 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ':password' => $hashed_password
                 ]);
                 
-                header('Location: admin.php?message=' . urlencode('New staff member ' . htmlspecialchars($username) . ' created successfully!'));
+                if (!$_SESSION)
+                header('Location: login.php?message=' . urlencode('New staff member ' . htmlspecialchars($username) . ' created successfully!'));
                 exit;
             } catch (PDOException $e) {
                 $error = 'Database error: ' . $e->getMessage();
