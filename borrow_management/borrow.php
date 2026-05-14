@@ -26,6 +26,7 @@ include '../sessioncheck.php';
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             text-align: center;
+            height: 200px;
             margin: 20px;
         }
         h1 {
@@ -132,9 +133,7 @@ include '../sessioncheck.php';
         </div>
 
 
-        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
-         
-        </div>
+        
     </div>
 </body>
 </html>
