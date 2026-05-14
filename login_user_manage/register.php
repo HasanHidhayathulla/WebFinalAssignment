@@ -77,8 +77,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <header class="topbar">
         <h1>Register New Staff</h1>
         <div>
-            
-            <a class="button" href="admin.php">Back to Admin</a>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <a class="button" href="admin.php">Back to Admin</a>
+            <?php endif; ?>
         </div>
     </header>
 
@@ -104,7 +105,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <button type="submit">Create Staff Account</button>
     </form>
-    <a  href="login.php">Already have an account? Login here</a>
+    <?php if (!isset($_SESSION['user_id'])): ?>
+        <a href="login.php">Already have an account? Login here</a>
+    <?php endif; ?>
 </div>
 </body>
 </html>
