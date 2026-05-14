@@ -1,6 +1,6 @@
 <?php
 include_once '../db.php'; // Include database connection file
-include '../sessioncheck.php';
+
 
 $fine_id = isset($_GET['id']) ? trim($_GET['id']) : '';
 
