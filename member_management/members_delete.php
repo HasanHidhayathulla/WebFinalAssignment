@@ -2,7 +2,7 @@
 // Handle member deletion
 session_start();
 
-require_once 'db.php';
+require_once '../db.php';
 
 $error = '';
 $message = '';
