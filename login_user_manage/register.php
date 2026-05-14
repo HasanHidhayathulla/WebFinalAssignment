@@ -16,8 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'All fields are required.';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error = 'Enter a valid email address.';
-    } elseif (strlen($password) <= 8) {
-        $error = 'Password must be longer than 8 characters.';
+    } elseif (strlen($password) < 8) {
+        $error = 'Minimum 8 characters required for the password.';
     } else {
         // Check for duplicate username or email
         $stmt = $pdo->prepare('SELECT user_id, username, email FROM `user` WHERE username = :username OR email = :email');
