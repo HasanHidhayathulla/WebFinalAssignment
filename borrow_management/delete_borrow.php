@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once '../db.php';
 
 $borrow_id = isset($_GET['borrow_id']) ? trim($_GET['borrow_id']) : '';
 

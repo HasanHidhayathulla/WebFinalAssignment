@@ -178,7 +178,6 @@ try {
 
         <div class="header-actions">
             <a href="borrow_form.php" class="btn btn-primary">+ Create New Transaction</a>
-            <a href="../index.php" class="btn btn-secondary">Back to Home</a>
         </div>
 
         <?php if ($success): ?>

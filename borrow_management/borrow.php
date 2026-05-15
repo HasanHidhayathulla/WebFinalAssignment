@@ -26,6 +26,7 @@ include '../sessioncheck.php';
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             text-align: center;
+            height: 200px;
             margin: 20px;
         }
         h1 {
@@ -131,16 +132,8 @@ include '../sessioncheck.php';
             <a href="borrowlist.php" class="btn btn-secondary">View Transactions</a>
         </div>
 
-        <div class="info-box">
-            <strong>Quick Start:</strong><br>
-            1. Click "Create Transaction" to add a new borrow record<br>
-            2. Use "View Transactions" to see all records<br>
-            3. Use Edit/Delete buttons in the table to manage records
-        </div>
 
-        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
-         
-        </div>
+        
     </div>
 </body>
 </html>
